@@ -10,17 +10,17 @@ import { RecipeService } from '../../recipe.service';
 })
 export class RecipeItemComponent implements OnInit {
   @Input() recipe: Recipe;
-  recipeId: Number;
+  @Input() index: Number;
 
   constructor(private recipeService: RecipeService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  onSelected() {
-    // this.recipeService.recipeSelected.emit(this.recipe);
-    this.recipeId = this.recipeService.getRecipeId(this.recipe)
-    this.router.navigate(['/recipes', this.recipeId]);
-  }
+  // onSelected() {
+  //   // this.recipeService.recipeSelected.emit(this.recipe);
+  //   this.recipeId = this.recipeService.getRecipeId(this.recipe)
+  //   this.router.navigate(['/recipes', this.recipeId]);
+  // }
 
 }
